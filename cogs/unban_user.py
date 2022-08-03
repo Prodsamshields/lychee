@@ -22,6 +22,9 @@ class unbanned(commands.Cog):
             await ctx.channel.purge(limit=1)
             await ctx.channel.send(embed=embed)
             return
+        
+        else:
+            await ctx.send(f'failed to unban member {member} please try again')
 
 def setup(bot):
     bot.add_cog(unbanned(bot))
