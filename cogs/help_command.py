@@ -23,7 +23,7 @@ class help_cmd_custom(commands.Cog):
         embed.add_field(name="Support/ home server", value="[server link](https://discord.gg/TEU43brVRe)")
         try:
           await channel.send(embed=embed)
-        except:
+        except nextcord.DiscordException:
           await ctx.send(embed=embed)
 
 def setup(bot):
