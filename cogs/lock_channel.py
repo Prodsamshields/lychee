@@ -16,7 +16,7 @@ class lockitdown(commands.Cog):
             embed2 = nextcord.Embed(description=f'{emoji} {channel_nums}/{channel_nums} channels have been locked.', color=0xFF6D7A)
             for channel in ctx.guild.text_channels:
                 lock_channel = channel
-                overwrite = channel.overwrites_for(ctx.guild.default_role)
+                overwrite = lock_channel.overwrites_for(ctx.guild.default_role)
                 overwrite.send_messages = False
                 await lock_channel.set_permissions(ctx.guild.default_role, overwrite=overwrite)
             await ctx.send(embed=embed2)
