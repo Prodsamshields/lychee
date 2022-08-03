@@ -1,7 +1,5 @@
 import nextcord
 from nextcord.ext import commands
-import os
-
 
 class removelockdown(commands.Cog):
     def __init__(self, bot):
@@ -12,7 +10,7 @@ class removelockdown(commands.Cog):
     async def unlock(self, ctx, channel : nextcord.TextChannel=None, reason=None):
         emoji = '🔓'
         
-        if channel == None:
+        if channel is None:
             channel_nums = len(ctx.guild.text_channels)
             embed2 = nextcord.Embed(description=f'{emoji} {channel_nums}/{channel_nums} channels have been unlocked.', color=0xFF6D7A)
             for channel in ctx.guild.text_channels:
