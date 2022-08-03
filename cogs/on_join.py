@@ -1,6 +1,5 @@
 import nextcord
 from nextcord.ext import commands
-import os
 import json
 
 
@@ -15,8 +14,6 @@ class onguildjoin(commands.Cog):
             pass
         else:
             await guild.create_role(name="lychee verified")
-            role = nextcord.utils.get(guild.roles, name="lychee verified")
-          
         with open("./prefixes.json", "r") as f:
             prefixes = json.load(f)
         prefixes[str(guild.id)] = ","
