@@ -30,7 +30,7 @@ class removelockdown(commands.Cog):
                 overwrite.send_messages = True
                 await channel.set_permissions(ctx.guild.default_role, overwrite=overwrite)
                 await ctx.send(embed=embed1)
-            except:
+            except nextcord.DiscordException:
                 return
 
 
