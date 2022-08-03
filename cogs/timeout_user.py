@@ -1,6 +1,5 @@
 import nextcord
 from nextcord.ext import commands
-import os
 from datetime import datetime
 import humanfriendly
 from datetime import timedelta
