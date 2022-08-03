@@ -1,7 +1,4 @@
-import nextcord
 from nextcord.ext import commands
-import os
-
 
 class purgemsg(commands.Cog):
     def __init__(self, bot):
