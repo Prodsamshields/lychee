@@ -1,7 +1,5 @@
 import nextcord
 from nextcord.ext import commands
-import os
-
 
 class unbanned(commands.Cog):
     def __init__(self, bot):
