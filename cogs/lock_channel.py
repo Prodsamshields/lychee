@@ -11,14 +11,14 @@ class lockitdown(commands.Cog):
     @commands.has_permissions(manage_channels=True)
     async def lock(self, ctx, channel : nextcord.TextChannel=None, reason=None):
         emoji = '🔒'
-        if channel == None:
+        if channel is None:
             channel_nums = len(ctx.guild.text_channels)
             embed2 = nextcord.Embed(description=f'{emoji} {channel_nums}/{channel_nums} channels have been locked.', color=0xFF6D7A)
             for channel in ctx.guild.text_channels:
-                channel = channel
+                lock_channel = channel
                 overwrite = channel.overwrites_for(ctx.guild.default_role)
                 overwrite.send_messages = False
-                await channel.set_permissions(ctx.guild.default_role, overwrite=overwrite)
+                await lock_channel.set_permissions(ctx.guild.default_role, overwrite=overwrite)
             await ctx.send(embed=embed2)
         elif channel and channel != None:
             try:
