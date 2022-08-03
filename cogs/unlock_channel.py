@@ -16,10 +16,10 @@ class removelockdown(commands.Cog):
             channel_nums = len(ctx.guild.text_channels)
             embed2 = nextcord.Embed(description=f'{emoji} {channel_nums}/{channel_nums} channels have been unlocked.', color=0xFF6D7A)
             for channel in ctx.guild.text_channels:
-                channel = channel
-                overwrite = channel.overwrites_for(ctx.guild.default_role)
+                unlock_channel = channel
+                overwrite = unlock_channel.overwrites_for(ctx.guild.default_role)
                 overwrite.send_messages = True
-                await channel.set_permissions(ctx.guild.default_role, overwrite=overwrite)
+                await unlock_channel.set_permissions(ctx.guild.default_role, overwrite=overwrite)
             await ctx.send(embed=embed2)
         
         else:
