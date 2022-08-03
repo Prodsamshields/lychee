@@ -55,9 +55,11 @@ async def on_command_error(ctx, error):
     await ctx.send(error)
     pass
 
+'''
 captcha1 = your captcha
 captcha2 = your captcha
-etc...
+fill your captcha section with path to captcha file
+'''
 
 @client.command(pass_context = True)
 async def verify(ctx):
@@ -71,7 +73,7 @@ async def verify(ctx):
       return m.author == ctx.author and m.channel == channel
   captcha_images = (captcha1, captcha2, captcha3, etc...)
   image_random = random.choice(captcha_images)
-  answer = ("captcha answer", "captcha answer", "captcha answer", "captcha answer", "captcha answer", etc...)
+  answer = ("captcha answer", "captcha answer", "captcha answer", "captcha answer", "captcha answer")
   embed = nextcord.Embed(title='Captcha Challenge | lychee', color=0xFF6D7A)
   try:
     embed.set_image(url=image_random)
