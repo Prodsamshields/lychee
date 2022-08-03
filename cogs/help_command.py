@@ -1,6 +1,5 @@
 import nextcord
 from nextcord.ext import commands
-import os
 import json
 
 class help_cmd_custom(commands.Cog):
