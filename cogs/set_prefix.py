@@ -19,7 +19,7 @@ class prefixset(commands.Cog, name="sets the bot prefix"):
                 json.dump(prefixes, f, indent=4)
             embed = nextcord.Embed(description=f'Prefix successfully changed to {prefix}', color=0xFF6D7A)
             await ctx.channel.send(embed=embed)
-        except:
+        except nextcord.DiscordException:
             return
 
 def setup(bot):
