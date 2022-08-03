@@ -20,7 +20,7 @@ class welcome(commands.Cog):
                 json.dump(welcome_msg, f, indent=4)
             embed = nextcord.Embed(description=f'Welcome message successfully set to: \'{welcome}\'', color=0xFF6D7A)
             await ctx.channel.send(embed=embed)
-        except:
+        except nextcord.DiscordException:
             return
 
 
