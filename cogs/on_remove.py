@@ -10,7 +10,7 @@ class onguildremove(commands.Cog):
     async def on_guild_remove(guild):
         with open("./prefixes.json", "r") as f:
             prefixes = json.load(f)
-        prefixes.pop(str(guild.id))
+            prefixes.pop(str(guild.id))
         with open("./prefixes.json", "w") as f:
             json.dump(prefixes, f, indent=4)
     
