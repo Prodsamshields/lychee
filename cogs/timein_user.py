@@ -1,6 +1,5 @@
 import nextcord
 from nextcord.ext import commands
-from datetime import datetime
 
 class timedin(commands.Cog):
     def __init__(self, bot):
